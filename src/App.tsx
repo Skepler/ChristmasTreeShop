@@ -7,6 +7,10 @@ import { CartPage } from './pages/CartPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 
 
+/*export default function App() {
+  return <h1 className="text-4xl text-blue-500">Tailwind Test</h1>;
+}*/
+
 function App() {
   return (
     <Router>
