@@ -1,5 +1,8 @@
 @import "tailwindcss";
-
+@theme {
+  --color-christmas-red: #C41E3A;
+  --color-christmas-green: #0B5E1A;
+}
 * {
   margin: 0;
   padding: 0;

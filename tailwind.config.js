@@ -13,7 +13,7 @@ export default {
         'christmas-red': '#C41E3A',
         'christmas-gold': '#FFD700',
         'christmas-light': '#F0F9FF',
-        
+        //Comment to change in the Source Control
       },
     },
   },
