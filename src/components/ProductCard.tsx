@@ -13,8 +13,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
-  const currentPrice = getProductPrice(product.id, selectedSize);
-
   const handleAddToCart = () => {
     const cartItem: CartItem = {
       productId: product.id,
@@ -27,21 +25,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition overflow-hidden">
-      <div className="bg-gradient-to-b from-christmas-light to-white p-8 text-center text-5xl">
+    <div className="w-[40vw] max-w-[480px] min-w-[300px] bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden flex flex-col mx-auto">
+      <div className="bg-gradient-to-b from-[#F0F9FF] to-white p-6 text-center text-5xl">
         {product.image}
       </div>
       
-      <div className="p-4">
-        <h3 className="text-lg font-bold text-christmas-green mb-2">{product.name}</h3>
-        <p className="text-sm text-gray-600 mb-4">{product.description}</p>
+      <div className="p-4 flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-bold text-[#0B5E1A] mb-2">{product.name}</h3>
+          <p className="text-sm text-gray-600 mb-4">{product.description}</p>
+        </div>
 
         <div className="mb-4">
           <label className="block text-sm font-semibold text-gray-700 mb-2">Size</label>
           <select
             value={selectedSize}
             onChange={(e) => setSelectedSize(e.target.value)}
-            className="w-full border-2 border-christmas-gold rounded px-3 py-2 focus:outline-none focus:border-christmas-green"
+            className="w-full border-2 border-[#FFD700] rounded px-3 py-2 focus:outline-none focus:border-[#0B5E1A]"
           >
             {product.sizes.map((size) => (
               <option key={size.value} value={size.value}>
@@ -59,7 +59,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             max="10"
             value={quantity}
             onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value)))}
-            className="w-full border-2 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-christmas-green"
+            className="w-full border-2 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-[#0B5E1A]"
           />
         </div>
 
@@ -68,7 +68,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className={`w-full py-2 rounded font-bold transition ${
             isAdded
               ? 'bg-green-500 text-white'
-              : 'bg-christmas-red text-white hover:bg-christmas-green'
+              : 'bg-[#C41E3A] text-white hover:bg-[#0B5E1A]'
           }`}
         >
           {isAdded ? '✓ Added to Cart!' : 'Add to Cart'}

@@ -13,15 +13,15 @@ export const CartPage: React.FC = () => {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-christmas-light to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#F0F9FF] to-white">
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold text-christmas-green mb-8">Shopping Cart</h1>
+          <h1 className="text-3xl font-bold text-[#0B5E1A] mb-8">Shopping Cart</h1>
           
           <div className="bg-white rounded-lg p-8 text-center">
             <p className="text-gray-600 text-lg mb-6">Your cart is empty</p>
             <Link
               to="/"
-              className="inline-block bg-christmas-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-christmas-green transition"
+              className="inline-block bg-[#C41E3A] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#0B5E1A] transition"
             >
               Continue Shopping
             </Link>
@@ -32,9 +32,9 @@ export const CartPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-christmas-light to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#F0F9FF] to-white">
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-christmas-green mb-8">Shopping Cart</h1>
+        <h1 className="text-3xl font-bold text-[#0B5E1A] mb-8">Shopping Cart</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
@@ -53,9 +53,9 @@ export const CartPage: React.FC = () => {
                       <div className="text-4xl">{product.image}</div>
                       
                       <div className="flex-1">
-                        <h3 className="font-bold text-lg text-christmas-green">{product.name}</h3>
+                        <h3 className="font-bold text-lg text-[#0B5E1A]">{product.name}</h3>
                         <p className="text-sm text-gray-600">Size: {item.selectedSize}</p>
-                        <p className="font-semibold text-christmas-red">{formatCurrency(price)}</p>
+                        <p className="font-semibold text-[#C41E3A]">{formatCurrency(price)}</p>
                       </div>
 
                       <div className="flex items-center gap-2">
@@ -85,7 +85,7 @@ export const CartPage: React.FC = () => {
                         <p className="font-bold text-lg">{formatCurrency(itemTotal)}</p>
                         <button
                           onClick={() => removeItem(product.id, item.selectedSize)}
-                          className="text-christmas-red hover:text-christmas-green text-sm font-semibold mt-2"
+                          className="text-[#C41E3A] hover:text-[#0B5E1A] text-sm font-semibold mt-2"
                         >
                           Remove
                         </button>
@@ -98,7 +98,7 @@ export const CartPage: React.FC = () => {
 
             <Link
               to="/"
-              className="inline-block text-christmas-red hover:text-christmas-green font-semibold mt-4"
+              className="inline-block text-[#C41E3A] hover:text-[#0B5E1A] font-semibold mt-4"
             >
               ← Continue Shopping
             </Link>
@@ -106,7 +106,7 @@ export const CartPage: React.FC = () => {
 
           {/* Order Summary */}
           <div className="bg-white rounded-lg shadow p-6 h-fit">
-            <h2 className="text-xl font-bold text-christmas-green mb-4">Order Summary</h2>
+            <h2 className="text-xl font-bold text-[#0B5E1A] mb-4">Order Summary</h2>
             
             <div className="space-y-3 mb-4 border-b pb-4">
               <div className="flex justify-between">
@@ -123,14 +123,14 @@ export const CartPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex justify-between text-xl font-bold text-christmas-red mb-6">
+            <div className="flex justify-between text-xl font-bold text-[#C41E3A] mb-6">
               <span>Total</span>
               <span>{formatCurrency(total)}</span>
             </div>
 
             <Link
               to="/checkout"
-              className="block w-full bg-christmas-red text-white py-3 rounded-lg font-bold text-center hover:bg-christmas-green transition"
+              className="block w-full bg-[#C41E3A] text-white py-3 rounded-lg font-bold text-center hover:bg-[#0B5E1A] transition"
             >
               Proceed to Checkout
             </Link>

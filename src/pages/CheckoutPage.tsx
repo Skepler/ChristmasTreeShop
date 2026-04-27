@@ -74,14 +74,14 @@ export const CheckoutPage: React.FC = () => {
 
   if (items.length === 0 && !orderCompleted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-christmas-light to-white">
+      <div className="min-h-screen bg-gradient-to-b from-[#F0F9FF] to-white">
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold text-christmas-green mb-8">Checkout</h1>
+          <h1 className="text-3xl font-bold text-[#0B5E1A] mb-8">Checkout</h1>
           <div className="bg-white rounded-lg p-8 text-center">
             <p className="text-gray-600 text-lg mb-6">Your cart is empty</p>
             <Link
               to="/"
-              className="inline-block bg-christmas-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-christmas-green transition"
+              className="inline-block bg-[#C41E3A] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#0B5E1A] transition"
             >
               Back to Shopping
             </Link>
@@ -93,10 +93,10 @@ export const CheckoutPage: React.FC = () => {
 
   if (orderCompleted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-christmas-light to-white flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-[#F0F9FF] to-white flex items-center justify-center">
         <div className="bg-white rounded-lg p-8 text-center max-w-md">
           <div className="text-6xl mb-4">✓</div>
-          <h1 className="text-3xl font-bold text-christmas-green mb-4">Order Placed!</h1>
+          <h1 className="text-3xl font-bold text-[#0B5E1A] mb-4">Order Placed!</h1>
           <p className="text-gray-600 mb-2">Thank you for your purchase!</p>
           <p className="text-gray-600 mb-6">
             A confirmation email will be sent to <span className="font-semibold">{formData.email}</span>
@@ -108,15 +108,15 @@ export const CheckoutPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-christmas-light to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#F0F9FF] to-white">
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-christmas-green mb-8">Checkout</h1>
+        <h1 className="text-3xl font-bold text-[#0B5E1A] mb-8">Checkout</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Checkout Form */}
           <form onSubmit={handleSubmit} className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow p-6 mb-6">
-              <h2 className="text-xl font-bold text-christmas-green mb-4">Billing Information</h2>
+              <h2 className="text-xl font-bold text-[#0B5E1A] mb-4">Billing Information</h2>
 
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
@@ -178,7 +178,7 @@ export const CheckoutPage: React.FC = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow p-6 mb-6">
-              <h2 className="text-xl font-bold text-christmas-green mb-4">Shipping Address</h2>
+              <h2 className="text-xl font-bold text-[#0B5E1A] mb-4">Shipping Address</h2>
 
               <div className="mb-4">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Address</label>
@@ -226,10 +226,10 @@ export const CheckoutPage: React.FC = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow p-6">
-              <h2 className="text-xl font-bold text-christmas-green mb-4">Shipping Method</h2>
+              <h2 className="text-xl font-bold text-[#0B5E1A] mb-4">Shipping Method</h2>
 
               <div className="space-y-3">
-                <label className="flex items-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-christmas-green">
+                <label className="flex items-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-[#0B5E1A]">
                   <input
                     type="radio"
                     name="shippingMethod"
@@ -247,7 +247,7 @@ export const CheckoutPage: React.FC = () => {
                   </span>
                 </label>
 
-                <label className="flex items-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-christmas-green">
+                <label className="flex items-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-[#0B5E1A]">
                   <input
                     type="radio"
                     name="shippingMethod"
@@ -268,7 +268,7 @@ export const CheckoutPage: React.FC = () => {
 
           {/* Order Summary */}
           <div className="bg-white rounded-lg shadow p-6 h-fit">
-            <h2 className="text-xl font-bold text-christmas-green mb-4">Order Summary</h2>
+            <h2 className="text-xl font-bold text-[#0B5E1A] mb-4">Order Summary</h2>
 
             <div className="space-y-3 mb-4 max-h-64 overflow-y-auto">
               {items.map((item) => {
@@ -303,7 +303,7 @@ export const CheckoutPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="border-t mt-4 pt-4 flex justify-between text-xl font-bold text-christmas-red mb-6">
+            <div className="border-t mt-4 pt-4 flex justify-between text-xl font-bold text-[#C41E3A] mb-6">
               <span>Total</span>
               <span>{formatCurrency(total)}</span>
             </div>
@@ -311,14 +311,14 @@ export const CheckoutPage: React.FC = () => {
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className="w-full bg-christmas-red text-white py-3 rounded-lg font-bold hover:bg-christmas-green transition disabled:opacity-50"
+              className="w-full bg-[#C41E3A] text-white py-3 rounded-lg font-bold hover:bg-[#0B5E1A] transition disabled:opacity-50"
             >
               {isSubmitting ? 'Processing...' : 'Place Order'}
             </button>
 
             <Link
               to="/cart"
-              className="block text-center mt-4 text-christmas-red hover:text-christmas-green font-semibold"
+              className="block text-center mt-4 text-[#C41E3A] hover:text-[#0B5E1A] font-semibold"
             >
               ← Back to Cart
             </Link>
