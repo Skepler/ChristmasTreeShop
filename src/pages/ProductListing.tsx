@@ -1,103 +1,86 @@
-import { useState } from 'react';
 import { products } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
 
+const benefits = [
+  {
+    id: 'about',
+    title: 'UK Grown Trees',
+    text: 'Farm fresh British grown trees, sustainably sourced',
+    icon: (
+      <path d="M20 7L12 18H16L10 27H30L24 18H28L20 7ZM17 31H23" />
+    ),
+  },
+  {
+    id: 'delivery',
+    title: 'Delivery Available',
+    text: 'Fast and reliable delivery straight to your door',
+    icon: (
+      <path d="M8 24H26V14H8V24ZM26 18H32L36 22V24H26V18ZM13 29A3 3 0 1 0 13 23A3 3 0 0 0 13 29ZM31 29A3 3 0 1 0 31 23A3 3 0 0 0 31 29Z" />
+    ),
+  },
+  {
+    id: 'contact',
+    title: 'Tree Stand Included',
+    text: 'Every tree comes with a sturdy tree stand',
+    icon: (
+      <path d="M19 8H21V19H27L30 29H10L13 19H19V8ZM16 8H24" />
+    ),
+  },
+];
+
 export const ProductListing: React.FC = () => {
-  const [filter, setFilter] = useState<'all' | 'real' | 'artificial'>('all');
-
-  const filteredProducts = products.filter(
-    (product) => filter === 'all' || product.category === filter
-  );
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F0F9FF] to-white flex items-center justify-center">
-      <div className="w-full max-w-4xl px-4 py-10 flex flex-col items-center">
-        {/* Hero Section - TOP */}
-        <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-[#0B5E1A] mb-2">Welcome to Christmas Tree Shop</h1>
-          <p className="text-gray-600 text-lg">Find the perfect tree for your holiday celebration</p>
-        </div>
+    <main
+      className="min-h-screen bg-[#fff7ea] bg-cover bg-top bg-no-repeat"
+      style={{ backgroundImage: "url('/images/cozy-shop-background.png')" }}
+    >
+      <div className="mx-auto flex w-full max-w-[1980px] flex-col items-center px-8 py-8">
+        <section className="max-w-lg pb-8 text-center">
+          <h1 className="font-serif text-5xl font-bold text-[#0B3D14] md:text-6xl">
+            Celebrate the season with the perfect tree
+          </h1>
 
-        {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
-          <button
-            onClick={() => setFilter('all')}
-            className={`px-6 py-2 rounded-lg font-semibold transition ${
-              filter === 'all'
-                ? 'bg-[#C41E3A] text-white'
-                : 'bg-white text-[#C41E3A] border-2 border-[#C41E3A] hover:bg-[#C41E3A] hover:text-white'
-            }`}
-          >
-            All Trees
-          </button>
-          <button
-            onClick={() => setFilter('real')}
-            className={`px-6 py-2 rounded-lg font-semibold transition ${
-              filter === 'real'
-                ? 'bg-[#0B5E1A] text-white'
-                : 'bg-white text-[#0B5E1A] border-2 border-[#0B5E1A] hover:bg-[#0B5E1A] hover:text-white'
-            }`}
-          >
-            Fresh-Cut
-          </button>
-          <button
-            onClick={() => setFilter('artificial')}
-            className={`px-6 py-2 rounded-lg font-semibold transition ${
-              filter === 'artificial'
-                ? 'bg-[#FFD700] text-[#0B5E1A]'
-                : 'bg-white text-[#FFD700] border-2 border-[#FFD700] hover:bg-[#FFD700] hover:text-white'
-            }`}
-          >
-            Artificial
-          </button>
-        </div>
+          <div className="my-6 w-full flex items-center justify-center gap-3 text-[#8a6a35] h-12">
+            <span className="h-px flex-1 bg-[#c8a168]" />
+            <span className="text-xl">✦</span>
+            <span className="h-px flex-1 bg-[#c8a168]" />
+          </div>
 
-        {/* Christmas Intro Section */}
-        <section className="w-full bg-white border border-gray-200 rounded-3xl p-12 mb-10 shadow-sm text-center">
-          <h2 className="text-3xl font-semibold text-[#0B5E1A] mb-6">Celebrate the season with the perfect tree</h2>
-          <p className="text-gray-600 leading-8 text-lg mb-12">
-            Choose from fresh-cut firs and beautifully crafted artificial trees to bring festive warmth into your home.
-            Our selection is hand-picked for quality, fullness, and holiday spirit — whether you want a family centerpiece or a cozy corner tree.
-          </p>
-
-          {/* Benefits Grid - Lower Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-16">
-            {/* Benefit 1: UK Grown */}
-            <div className="bg-christmas-red rounded-2xl p-6 border border-[#0B5E1A]/20 text-center hover:shadow-md transition">
-              <div className="text-5xl mb-4">🌲</div>
-              <h3 className="text-xl font-semibold text-[#0B5E1A] mb-2">UK Grown Trees</h3>
-              <p className="text-gray-600 text-sm">Farm fresh British grown trees, sustainably sourced</p>
-            </div>
-
-            {/* Benefit 2: Delivery Window */}
-            <div className="bg-[#F0F9FF]/30 rounded-2xl p-6 border border-[#0B5E1A]/20 text-center hover:shadow-md transition">
-              <div className="text-5xl mb-4">📅</div>
-              <h3 className="text-xl font-semibold text-[#0B5E1A] mb-2">Pick Your Delivery Window</h3>
-              <p className="text-gray-600 text-sm">Choose your perfect delivery week for maximum freshness</p>
-            </div>
-
-            {/* Benefit 3: Free Delivery */}
-            <div className="bg-[#F0F9FF]/30 rounded-2xl p-6 border border-[#0B5E1A]/20 text-center hover:shadow-md transition">
-              <div className="text-5xl mb-4">🚚</div>
-              <h3 className="text-xl font-semibold text-[#0B5E1A] mb-2">Free UK Delivery</h3>
-              <p className="text-gray-600 text-sm">On all mainland UK orders for your convenience</p>
-            </div>
+          <div className="mx-auto grid grid-cols-1 gap-6 text-center justify-center md:grid-cols-[repeat(3,14rem)] mb-8">
+            {benefits.map((benefit) => (
+              <div key={benefit.title} id={benefit.id} className="flex flex-col items-center justify-center">
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#bfd6ad] bg-[#f6fbf1]/80">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 40 40"
+                    className="h-9 w-9 fill-none stroke-[#183b17] stroke-[2.2] stroke-linecap-round stroke-linejoin-round"
+                  >
+                    {benefit.icon}
+                  </svg>
+                </span>
+                <span className="max-w-64">
+                  <h2 className="font-serif text-xl font-bold text-[#183b17]">{benefit.title}</h2>
+                  <p className="mt-1 text-base leading-5 text-[#3f3427]">{benefit.text}</p>
+                </span>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Products Column */}
-        <div className="flex flex-col gap-6 items-center w-full max-w-2xl mx-auto">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className="my-15 flex w-full max-w-7xl items-center justify-center gap-4 h-12" >
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#8a6a35] to-[#8a6a35]" />
+          <span className="text-sm text-[#C41E3A]">✦</span>
+          <span className="h-2 w-24 rounded-full bg-[#dfeecf] ring-1 ring-[#bfd6ad]" />
+          <span className="text-sm text-[#C41E3A]">✦</span>
+          <span className="h-px flex-1 bg-gradient-to-l from-transparent via-[#8a6a35] to-[#8a6a35]" />
         </div>
 
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-10 text-gray-500">
-            No trees found. Try a different filter!
-          </div>
-        )}
+        <section className="grid w-full max-w-[1320px] grid-cols-1 justify-center gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </section>
       </div>
-    </div>
+    </main>
   );
 };

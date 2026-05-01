@@ -3,30 +3,53 @@ import { useCart } from '../context/CartContext';
 
 export const Header: React.FC = () => {
   const { items } = useCart();
-
   const cartCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <header className="bg-[#0B5E1A] text-black shadow-lg sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold hover:text-[#FFD700] transition">
-          🎄 Christmas Tree Shop
+    <header className="sticky top-0 z-50 border-b border-[#284716] bg-[#fff4df]/95 shadow-sm backdrop-blur-md">
+      <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-8 py-5">
+        <Link to="/" className="group flex items-center gap-0">
+          <span className="relative -mr-3 hidden h-16 w-20 items-center justify-center md:flex">
+            <svg aria-hidden="true" viewBox="0 0 96 76" className="h-full w-full">
+              <path d="M35 18C22 21 15 28 10 39" stroke="#244b1d" strokeWidth="5" strokeLinecap="round" />
+              <path d="M40 12C30 17 24 25 20 38" stroke="#2f6427" strokeWidth="4" strokeLinecap="round" />
+              <path d="M49 16C40 22 34 30 30 42" stroke="#244b1d" strokeWidth="4" strokeLinecap="round" />
+              <circle cx="50" cy="43" r="9" fill="#9d4d16" />
+              <path d="M43 38L57 48M57 38L43 48" stroke="#6c2f0c" strokeWidth="2" />
+            </svg>
+          </span>
+          <span className="relative rounded-md border-2 border-[#8a6a35] bg-[#f6deb2] px-8 py-3 shadow-[0_4px_0_#c8a168] transition group-hover:border-[#0B5E1A]">
+            <span className="absolute -top-3 left-8 h-3 w-1 rounded bg-[#8a6a35]" />
+            <span className="absolute -top-3 right-8 h-3 w-1 rounded bg-[#8a6a35]" />
+            <span className="text-2xl font-serif font-bold text-[#0B3D14]">
+              Christmas Tree Shop
+            </span>
+          </span>
         </Link>
-        
-        <nav className="flex items-center gap-6">
-          <Link to="/" className="hover:text-[#FFD700] transition">
-            Browse Trees
+
+        <nav className="hidden items-center gap-16 text-xl font-serif text-[#183b17] lg:flex">
+          <Link to="/" className="transition hover:text-[#C41E3A]">
+            Shop
           </Link>
-          <Link to="/cart" className="relative hover:text-[#FFD700] transition">
-            <span className="text-xl">🛒</span>
-            {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-[#C41E3A] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                {cartCount}
-              </span>
-            )}
-          </Link>
+          <a href="#delivery" className="transition hover:text-[#C41E3A]">
+            Delivery
+          </a>
+          <a href="#about" className="transition hover:text-[#C41E3A]">
+            About
+          </a>
+          <a href="#contact" className="transition hover:text-[#C41E3A]">
+            Contact
+          </a>
         </nav>
+
+        <Link
+          to="/cart"
+          className="rounded-full bg-[#b51f1f] px-8 py-3 text-xl font-serif font-bold text-white shadow-md transition hover:bg-[#0B5E1A]"
+        >
+          Cart{cartCount > 0 ? ` (${cartCount})` : ''}
+        </Link>
       </div>
+      <div className="h-4 border-t border-[#5c7b2e] bg-[linear-gradient(90deg,#224d1d_0_12px,#315f28_12px_24px,#224d1d_24px_36px)] bg-[length:36px_100%]" />
     </header>
   );
 };

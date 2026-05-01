@@ -1,4 +1,4 @@
-import  type {  Product } from '../types/index';
+import type { Product } from '../types/index';
 
 export const products: Product[] = [
   {
@@ -6,7 +6,7 @@ export const products: Product[] = [
     name: 'Classic Pine Tree',
     price: 49.99,
     description: 'Beautiful fresh-cut Douglas Fir with rich green needles. Perfect for any living room.',
-    image: '🌲',
+    image: 'https://images.unsplash.com/photo-1671782328870-6260dd0384c4?auto=format&fit=crop&w=900&q=80',
     category: 'real',
     sizes: [
       { value: '4ft', label: '4 feet', priceModifier: 0 },
@@ -19,7 +19,7 @@ export const products: Product[] = [
     name: 'Luxury Spruce',
     price: 79.99,
     description: 'Premium Norway Spruce with full, dense branches. Ideal for large spaces.',
-    image: '🎄',
+    image: 'https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=900&q=80',
     category: 'real',
     sizes: [
       { value: '5ft', label: '5 feet', priceModifier: 0 },
@@ -32,7 +32,7 @@ export const products: Product[] = [
     name: 'Compact Fir',
     price: 39.99,
     description: 'Smaller, compact tree perfect for apartments or small corners.',
-    image: '🌲',
+    image: 'https://images.unsplash.com/photo-1543258103-a62bdc069871?auto=format&fit=crop&w=900&q=80',
     category: 'real',
     sizes: [
       { value: '3ft', label: '3 feet', priceModifier: 0 },
@@ -44,7 +44,7 @@ export const products: Product[] = [
     name: 'Artificial Deluxe',
     price: 129.99,
     description: 'Realistic pre-lit artificial tree with 600 LED lights. No maintenance needed.',
-    image: '✨',
+    image: 'https://images.unsplash.com/photo-1604537466608-109fa2f16c3b?auto=format&fit=crop&w=900&q=80',
     category: 'artificial',
     sizes: [
       { value: '6ft', label: '6 feet', priceModifier: 0 },
@@ -56,7 +56,7 @@ export const products: Product[] = [
     name: 'Premium Artificial Noble Fir',
     price: 199.99,
     description: 'High-end artificial tree with 1000 LED lights and realistic branch tips.',
-    image: '✨',
+    image: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=900&q=80',
     category: 'artificial',
     sizes: [
       { value: '7ft', label: '7 feet', priceModifier: 0 },
@@ -68,7 +68,7 @@ export const products: Product[] = [
     name: 'Budget Friendly Fresh Fir',
     price: 34.99,
     description: 'Affordable fresh-cut tree. Great value for the budget-conscious shopper.',
-    image: '🌲',
+    image: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=80',
     category: 'real',
     sizes: [
       { value: '4ft', label: '4 feet', priceModifier: 0 },

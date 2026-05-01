@@ -50,7 +50,11 @@ export const CartPage: React.FC = () => {
                 return (
                   <div key={`${product.id}-${item.selectedSize}`} className="border-b p-4 last:border-b-0">
                     <div className="flex items-start gap-4">
-                      <div className="text-4xl">{product.image}</div>
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="h-20 w-20 rounded object-cover"
+                      />
                       
                       <div className="flex-1">
                         <h3 className="font-bold text-lg text-[#0B5E1A]">{product.name}</h3>

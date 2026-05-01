@@ -2,6 +2,8 @@
 @theme {
   --color-christmas-red: #C41E3A;
   --color-christmas-green: #0B5E1A;
+  --color-christmas-gold: #FFD700;
+  --color-christmas-light: #F0F9FF;
 }
 * {
   margin: 0;
