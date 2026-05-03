@@ -1,7 +1,7 @@
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0B3D14] text-white">
-      <div className="mx-auto grid w-full max-w-7xl place-items-center gap-8 px-6 py-10 text-center md:grid-cols-3">
+      <div className="mx-auto grid gap-8 px-6 py-10 text-center justify-center md:grid-cols-[repeat(3,14rem)]">
         <div className="max-w-xs">
           <h2 className="font-serif text-2xl font-bold">Christmas Tree Shop</h2>
           <p className="mt-3 text-sm leading-6 text-white/80">

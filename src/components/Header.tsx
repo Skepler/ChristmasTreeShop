@@ -7,8 +7,8 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#284716] bg-[#fff4df]/95 shadow-sm backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-8 py-5">
-        <Link to="/" className="group flex items-center gap-0">
+      <div className="mx-auto grid w-full grid-cols-[1fr_auto_1fr] items-center px-8 py-5">
+        <Link to="/" className="group flex items-center gap-0 justify-self-start ">
           <span className="relative -mr-3 hidden h-16 w-20 items-center justify-center md:flex">
             <svg aria-hidden="true" viewBox="0 0 96 76" className="h-full w-full">
               <path d="M35 18C22 21 15 28 10 39" stroke="#244b1d" strokeWidth="5" strokeLinecap="round" />
@@ -28,9 +28,9 @@ export const Header: React.FC = () => {
         </Link>
 
         <nav className="hidden items-center gap-16 text-xl font-serif text-[#183b17] lg:flex">
-          <Link to="/" className="transition hover:text-[#C41E3A]">
+          <a href="#shop" className="transition hover:text-[#C41E3A]">
             Shop
-          </Link>
+          </a>
           <a href="#delivery" className="transition hover:text-[#C41E3A]">
             Delivery
           </a>
@@ -44,9 +44,43 @@ export const Header: React.FC = () => {
 
         <Link
           to="/cart"
-          className="rounded-full bg-[#b51f1f] px-8 py-3 text-xl font-serif font-bold text-white shadow-md transition hover:bg-[#0B5E1A]"
+          aria-label={`Cart${cartCount > 0 ? ` with ${cartCount} items` : ''}`}
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#b51f1f] text-white shadow-md transition hover:bg-[#0B5E1A] justify-self-end"
         >
-          Cart{cartCount > 0 ? ` (${cartCount})` : ''}
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-7 w-7"
+            fill="none"
+          >
+            <path
+              d="M5 5H7L9 15H18.5L20.5 8H8.2"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M10 8.5L12 6.5L14 8.5"
+              stroke="#D6A629"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M12 6.5V13"
+              stroke="#D6A629"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+            <circle cx="10" cy="19" r="1.6" fill="currentColor" />
+            <circle cx="18" cy="19" r="1.6" fill="currentColor" />
+          </svg>
+          {cartCount > 0 && (
+            <span className="absolute -right-1 -top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-[#D6A629] px-1 text-xs font-bold text-[#0B3D14]">
+              {cartCount}
+            </span>
+          )}
         </Link>
       </div>
       <div className="h-4 border-t border-[#5c7b2e] bg-[linear-gradient(90deg,#224d1d_0_12px,#315f28_12px_24px,#224d1d_24px_36px)] bg-[length:36px_100%]" />
